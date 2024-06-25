@@ -1,73 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
 
 
-html{
+html {
     font-size: 18px;
 }
-body{
+
+body {
     background-color: #272727;
     color: white;
     font-family: "Martian Mono", monospace;
-    margin: 0px; /* забираємо стандартні відступи в тега body */
-
+    margin: 0px;
+    /* забираємо стандартні відступи в тега body */
 }
-body.light-theme{
+
+body.light-theme {
     background-color: #e6e6e6;
     color: rgb(24, 24, 24);
 }
 
-
 header{
-    display: flex;
-    height: 80px;
-    padding: 0px 40px;
-    justify-content: space-around;
-    width: 100%;
-    align-items: center;
+    background: #272727;
 }
-
-.menu{
-    display: flex;
-    height: 80px;
-    padding: 30px 50px;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 2em;
-}
-.menu li{
-    list-style: none;
-}
-
-.menu-elements{
-    color: #000;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16.8px; /* 120% */
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid transparent;
-    transition: color .5s linear, border-bottom .3s linear;
-
-}
-
-.menu-elements:hover{
-    border-color: white;
-}
-.logo{
-    height: 50px;
-}
-
-
-
-
-.banner{
+.banner {
     width: 100%;
     height: 90vh;
     background: url('/img/hector-martinez-EG49vTtKdvI-unsplash.jpg');
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,14 +35,14 @@ header{
 }
 
 
-.banner h1{
+.banner h1 {
     font-size: 3rem;
     text-align: center;
 }
 
 /* Стилі карточок взято з 4 уроку 2 модуля (сайт за макетом)  */
 
-.card{
+.my-card {
     padding: 28px;
     background: transparent;
     transition: background .2s linear;
@@ -91,44 +50,52 @@ header{
     max-width: 350px;
 }
 
-.card:hover{
+.my-card:hover {
     background: #DCE5E2;
     cursor: pointer;
     transition: background .2s linear;
     color: #272727;
 }
-.light-theme .card:hover{
+
+.light-theme .my-card:hover {
     background: #ffffff;
-    
+
 }
 
-.text-card{
+.text-my-card {
     font-size: 1rem;
     font-weight: 600;
+    margin-top: 20px;
 }
-.description-card{
+
+.description-card {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
     -webkit-box-orient: vertical;
+    font-size: 0.7rem;
+
 }
-.price-card{
+
+.price-card {
     font-size: 1rem;
-    line-height: 1rem; /* 120% */
+    line-height: 1rem;
+    /* 120% */
     color: rgb(154, 131, 255);
     display: flex;
     gap: 5px;
     align-items: center;
 }
 
-.card img{
+.my-card img {
     width: 244px;
     height: 214px;
     object-fit: contain;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
 }
 
-.container-cards{
+.container-cards {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -139,32 +106,26 @@ header{
     margin-bottom: 72px;
 }
 
-
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
-footer{
+footer {
     margin-top: 50px;
     background: rgb(73, 73, 73);
-    padding: 50px 100px; 
+    padding: 50px 100px;
 }
 
-footer{
+footer {
     color: #c8c8c8;
 }
-.attribution{
+
+.attribution {
     color: #a8a8a8;
     font-size: 12px;
 }
 
-.attribution a{
+.attribution a {
     color: #a8a8a8;
 }
 
-#themeToggle{
+#themeToggle {
     background: transparent;
     color: #fff;
     width: 50px;
@@ -175,7 +136,8 @@ footer{
     margin: 10px;
     border-color: transparent;
 }
-#themeToggle:hover{
+
+#themeToggle:hover {
     transform: scale(1.1);
     transition: 0.4s transform linear;
     box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
@@ -186,69 +148,16 @@ footer{
     transition-duration: .2s;
 }
 
-/* Медіа-запити для різних екранів */
-/* Найменші пристрої (телефони з роздільною здатністю 576 пікселів і менше) */
-@media (max-width: 576px) { 
-    .container {
-        padding: 0 20px;
-    }
-    html{
-        font-size: 13px;
-    }
-    
-}
-/* Малі пристрої (телефони з альбомною орієнтацією, 576 пікселів і вище) */
-@media (min-width: 576px) { 
-    .container {
-        max-width: 540px;
-        padding: 0 30px;
-    }
-}
-
-/* Середні пристрої (планшети, 768 пікселів і вище) */
-@media (min-width: 768px) { 
-    .container {
-        max-width: 720px;
-    }
-}
-
-/* Великі пристрої (ноутбуки, 992px і вище) */
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
-/* Пристрої XL (великі настільні комп'ютери, 1200 пікселів і вище) */
-@media (min-width: 1200px) { 
-    .container {
-        max-width: 1140px;
-    }
-}
-
-/* Пристрої XXL (великі настільні комп'ютери, 1200 пікселів і вище) */
-@media (min-width: 1400px) { 
-    .container {
-        max-width: 1320px;
-    }
-}
-
-/* Проста німація появи тексту */
-
-.fade-in-text {
-    opacity: 0; /* Спочатку текст прихований */
-    transition: opacity 0.5s ease-in; /* Анімація зміни прозорості триває 1 секунду */
-}
-
-.show { /* Цей клас потрібно додати в JavaScript, щоб елемент зв'явився */
-    opacity: 1; /* При зміні класу на show текст з'являється плавно */
-}
+/* Проста анімація появи тексту */
 
 header.fixed {
-    position: fixed; /* Фіксоване позиціонування */
-    top: 0; /* Закріплено зверху */
-    width: 100%; /* Ширина за всю ширину вікна */
-    background:#272727;
+    position: fixed;
+    /* Фіксоване позиціонування */
+    top: 0;
+    /* Закріплено зверху */
+    width: 100%;
+    /* Ширина за всю ширину вікна */
+    background: #272727;
     max-width: 100%;
     z-index: 100;
 }
@@ -256,83 +165,88 @@ header.fixed {
 
 /* Кнопка Кошик */
 /* Код взято з https://uiverse.io/vinodjangid07/ordinary-swan-71 */
-  
+
 .cart-btn {
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: linear-gradient(to left,rgb(173, 154, 255),rgb(149, 110, 255));
-  border-radius: 30px;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  font-size: 0.9em;
-  font-family: "Martian Mono", monospace;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  transition-duration: .2s;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(to left, rgb(173, 154, 255), rgb(149, 110, 255));
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 0.9em;
+    font-family: "Martian Mono", monospace;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition-duration: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
 }
 
 .bell {
-  width: 25px;
+    width: 25px;
 }
 
 
 .cart-btn:hover {
-  background: linear-gradient(to left,rgb(154, 131, 255),rgb(135, 91, 255));
+    background: linear-gradient(to left, rgb(154, 131, 255), rgb(135, 91, 255));
 }
 
 .cart-btn:active {
-  transform: scale(0.97);
-  transition-duration: .2s;
+    transform: scale(0.97);
+    transition-duration: .2s;
 }
 
 .cart-btn:hover .bell {
-  animation: bellRing 0.9s both;
+    animation: bellRing 0.9s both;
 }
-.cart-btn div{
+
+.cart-btn div {
     position: relative;
 }
-.cart-counter{
+
+.cart-counter {
     background: #fff;
     font-size: small;
     color: rgb(135, 91, 255);
     border-radius: 100px;
     padding: 0 .2em;
-    position: absolute; /* Змініть позицію на абсолютну */
-    top: 0; /* Відступ зверху */
-    right: 0; /* Відступ справа */
+    position: absolute;
+    /* Змініть позицію на абсолютну */
+    top: 0;
+    /* Відступ зверху */
+    right: 0;
+    /* Відступ справа */
 }
 
 
 /* bell ringing animation keyframes*/
 @keyframes bellRing {
-  0%,
-  100% {
-    transform-origin: top;
-  }
 
-  15% {
-    transform: rotateZ(10deg);
-  }
+    0%,
+    100% {
+        transform-origin: top;
+    }
 
-  30% {
-    transform: rotateZ(-10deg);
-  }
+    15% {
+        transform: rotateZ(10deg);
+    }
 
-  45% {
-    transform: rotateZ(5deg);
-  }
+    30% {
+        transform: rotateZ(-10deg);
+    }
 
-  60% {
-    transform: rotateZ(-5deg);
-  }
+    45% {
+        transform: rotateZ(5deg);
+    }
 
-  75% {
-    transform: rotateZ(2deg);
-  }
+    60% {
+        transform: rotateZ(-5deg);
+    }
+
+    75% {
+        transform: rotateZ(2deg);
+    }
 }
-
