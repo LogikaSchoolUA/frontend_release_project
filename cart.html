@@ -14,8 +14,9 @@
 
 <body>
   <!-- Тіло: увесь вміст сторінки -->
-  <header>
-    <nav class="navbar navbar-expand-lg "  data-bs-theme="dark">
+  <!-- Тіло: увесь вміст сторінки -->
+  <header class="container fixed">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html"><img class='logo' src='img/logo_white.png' height="50px" alt='logo'></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +35,10 @@
               <a class="nav-link" href='#support'>Підтримка</a>
             </li>
           </ul>
+          <form id="searchForm" class="d-flex mx-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Пошук" aria-label="Search">
+            <button class="btn btn-outline-secondary btn-search" type="submit">Знайти</button>
+          </form>
           <button class="cart-btn" id="cartBtn">
             Кошик
             <svg xmlns="http://www.w3.org/2000/svg" class="bell" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -51,11 +56,10 @@
         </div>
       </div>
     </nav>
-    </nav>
   </header>
   <main class="container cart-page">
 
-    <section class="cart">
+    <section class="cart py-4">
       <h2>Ваш кошик</h2>
       <div class="cart-items-list">
         У кошику ще немає товарів

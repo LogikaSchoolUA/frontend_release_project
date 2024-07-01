@@ -37,13 +37,13 @@ cart_list.addEventListener('change', (event) => {
         }
     });
 
-//анімація появи кошика поступова поява кошика
-anime({
-    targets: '.cart',
-    opacity: 1, // Кінцева прозорість (1 - повністю видимий)
-    duration: 500, // Тривалість анімації в мілісекундах
-    easing: 'easeInOutQuad'
-})
+    //анімація появи кошика поступова поява кошика
+    anime({
+        targets: '.cart',
+        opacity: 1, // Кінцева прозорість (1 - повністю видимий)
+        duration: 500, // Тривалість анімації в мілісекундах
+        easing: 'easeInOutQuad'
+    })
 
 orderBtn.addEventListener("click", function (event) {
         orderBtn.style.display = "none"

@@ -60,3 +60,8 @@
     width: 100px;
 }
 
+@media (max-width: 720px) {
+    .cart-page{
+        flex-wrap: wrap;
+    }
+}

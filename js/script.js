@@ -23,8 +23,7 @@ function getCookieValue(cookieName) {
 let themeBtn = document.querySelector("#themeToggle")
 
 function setTheme(theme) {
-    let navbar = document.querySelector(".navbar")
-    if (theme=='light') {
+    if (theme == 'light') {
         document.body.classList.add("light-theme");
         themeBtn.innerHTML = '<i class="bi bi-moon"></i>';
     } else {
@@ -38,20 +37,21 @@ setTheme(theme)
 
 themeBtn.addEventListener("click", () => {
     document.body.classList.toggle('light-theme'); // Перемикаємо клас теми
-    if (theme == 'light'){
+    if (theme == 'light') {
         theme = 'dark'
-    }else{
+    } else {
         theme = 'light'
     }
     setTheme(theme)
     // Зберігаємо JSON рядок у кукі
     document.cookie = `theme=${theme}; max-age=${60 * 60 * 24 * 7}; path=/`;
-})
+}) 
+
 // Очікуємо завантаження сторінки
 document.addEventListener('DOMContentLoaded', () => {
     // Отримуємо всі написи для анімації
     const textElements = document.querySelectorAll('.fade-in-text');
-    
+
     // Додаємо клас "show" для запуску анімації
     textElements.forEach(element => {
         element.classList.add('show');
@@ -179,8 +179,8 @@ class ShoppingCart {
         for (let key in this.items) { // проходимося по всіх ключах об'єкта this.items
             total += this.items[key].price * this.items[key].quantity; // рахуємо вартість усіх товарів
         }
-        return total; 
-       
+        return total;
+
     }
 }
 
@@ -198,6 +198,39 @@ function addToCart(event) {
     cart.addItem(product);
     console.log(cart);
 }
+
+
+// Функція пошуку товарів
+function searchProducts(event) {
+    event.preventDefault(); // Запобігає перезавантаженню сторінки при відправці форми
+
+    let query = document.querySelector('#searchForm input').value.toLowerCase();
+    let productsList = document.querySelector('.products-list');
+    productsList.innerHTML = ''; // Очищуємо список товарів
+
+    // Відображаємо товари на сторінці
+    getProducts().then(function (products) {
+        let productsList = document.querySelector('.products-list')
+        products.forEach(function (product) {
+            if (product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query)) {
+                productsList.innerHTML += getCardHTML(product)
+            }
+        })
+
+        // Отримуємо всі кнопки "Купити" на сторінці
+        let buyButtons = document.querySelectorAll('.products-list .cart-btn');
+        // Навішуємо обробник подій на кожну кнопку "Купити"
+        if (buyButtons) {
+            buyButtons.forEach(function (button) {
+                button.addEventListener('click', addToCart);
+            });
+        }
+    })
+}
+
+// Навішуємо обробник подій на форму пошуку
+let searchForm = document.querySelector('#searchForm')
+searchForm.addEventListener('submit', searchProducts);
 
 
 
